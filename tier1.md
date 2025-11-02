@@ -69,8 +69,8 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
 2. **Filament Diameter Measurement**  
    - Average three readings at three rotations; input into slicer.
 
-3. **Single-Wall Flow Cube**  
-   - 0.45 mm target; measure wall thickness and adjust flow % to match.
+3. **Flow Calibration**  
+   - Ellis or Orca slicer flow tuning.
 
 4. **First-Layer Calibration**  
    - 75×75 mm bed patch; tune Z offset for continuous sheen.
@@ -85,7 +85,7 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
    - Use accelerometer or ringing tower; run SHAPER_CALIBRATE or equivalent.
 
 8. **Validation Cube**  
-   - 20 mm cube; check dimensional accuracy and inspect walls for ringing.
+   - Voron cube and/or qubenchy.
 
 ---
 

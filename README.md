@@ -104,26 +104,6 @@ Use 80% of calculated v_max for continuous print moves.
 
 ---
 
-## Repository Structure (suggested)
-
-```
-/tiers/
-  tier1_baseline/
-  tier2_sf/
-  tier3_hf/
-  tier4_uhf/
-  tier5_machine/
-  
-/profiles/
-  orca_slicer_json/
-  klipper_macros/
-  
-/docs/
-  tuning_guides/
-  calibration_results/
-```
-
----
 
 ## License
 

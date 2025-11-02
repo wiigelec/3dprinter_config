@@ -79,7 +79,7 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
    - 5 °C steps (e.g., 195→220 °C); choose lowest stable fusion temperature.
 
 6. **Pressure Advance (PA)**  
-   - Print PA tower at 40 mm/s walls; select sharpest non-bulging corners.
+   - PA pattern test.
 
 7. **Input Shaper (IS)**  
    - Use accelerometer or ringing tower; run SHAPER_CALIBRATE or equivalent.

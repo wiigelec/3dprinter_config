@@ -20,27 +20,31 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
 
 ---
 
-## Baseline Print Parameters
+## Print Speed and Acceleration Table
 
-### 0.4 mm nozzle
-- Line width: **0.45 mm**
-- Layer height: **0.20 mm**
-- Max flow: **6 mm³/s**
-- Max wall speed: **40–60 mm/s**
-- Max infill speed: **60 mm/s**
-- Travel speed: **100 mm/s**
-- Acceleration: **1500–3000 mm/s²**
-- Square corner velocity: **5–8 mm/s**
+| Feature | 0.4 mm Line Width | 0.6 mm Line Width | 0.4 mm Accel (mm/s²) | 0.6 mm Accel (mm/s²) |
+|----------|------------------|------------------|----------------------|----------------------|
+| **External Walls** | 35 mm/s | 25 mm/s | 1500 | 1500 |
+| **Inner Walls** | 45 mm/s | 30 mm/s | 2000 | 2000 |
+| **Top/Bottom** | 40 mm/s | 28 mm/s | 2000 | 2000 |
+| **Infill** | 60 mm/s | 40 mm/s | 2500 | 2500 |
+| **Bridges** | 25 mm/s | 25 mm/s | 1500 | 1500 |
+| **Travel** | 100 mm/s | 100 mm/s | 3000 | 3000 |
+| **First Layer** | 20 mm/s | 15 mm/s | 1000 | 1000 |
+| **Support Interface** | 45 mm/s | 30 mm/s | 2000 | 2000 |
+| **Small Perimeters** | 25 mm/s | 20 mm/s | 1200 | 1200 |
 
-### 0.6 mm nozzle
-- Line width: **0.60 mm**
-- Layer height: **0.25 mm**
-- Max flow: **6 mm³/s**
-- Max wall speed: **25–40 mm/s**
-- Max infill speed: **40 mm/s**
-- Travel speed: **100 mm/s**
-- Acceleration: **1500–3000 mm/s²**
-- Square corner velocity: **5–8 mm/s**
+**Square Corner Velocity:** 5–8 mm/s  
+**Max Accel to Decel:** 50% of max accel
+
+---
+
+## Line Width and Layer Height Recommendations
+
+| Nozzle | Line Width Range | Layer Height Range | Typical Use |
+|---------|------------------|--------------------|--------------|
+| 0.4 mm | 0.42–0.48 mm | 0.16–0.24 mm | Standard fine detail calibration |
+| 0.6 mm | 0.58–0.68 mm | 0.20–0.28 mm | Stable extrusion verification |
 
 ---
 

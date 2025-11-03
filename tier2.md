@@ -1,9 +1,9 @@
-# Tier 1 — Baseline Calibration (Dragon SF)
+# Tier 2 — Standard Flow Tuning (Dragon SF)
 
 **Purpose:**  
-Establish a mechanical and thermal reference point for your 3D printer.  
-Tier 1 represents the minimal operational settings used for calibration, bring-up, and baseline verification.  
-It focuses on *accuracy, stability, and repeatability*, not speed.
+Tier 2 represents the *operational baseline* for standard flow hotends.  
+It extends from the Tier 1 calibration base and introduces higher speeds and accelerations within the thermal and volumetric limits of the **Dragon SF** hotend (10–15 mm³/s).  
+The goal is consistent production-quality printing with balanced throughput and finish.
 
 ---
 
@@ -11,12 +11,12 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
 
 | Parameter | Description |
 |------------|--------------|
-| **Tier Level** | 1 — Baseline |
-| **Hotend** | Dragon SF (Standard Flow) |
-| **Volumetric Flow Limit** | ≤6 mm³/s |
+| **Tier Level** | 2 — Standard Flow |
+| **Hotend** | Dragon SF |
+| **Volumetric Flow Limit** | 10–15 mm³/s |
 | **Nozzle Sizes** | 0.4 mm, 0.6 mm |
 | **Materials** | PLA, PETG, ASA, TPU |
-| **Goal** | Establish flow, PA, IS, thermal and mechanical consistency |
+| **Goal** | Achieve production-ready speeds while maintaining surface integrity |
 
 ---
 
@@ -24,17 +24,17 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
 
 | Feature | 0.4 mm Line Width | 0.6 mm Line Width | 0.4 mm Accel (mm/s²) | 0.6 mm Accel (mm/s²) |
 |----------|------------------|------------------|----------------------|----------------------|
-| **External Walls** | 35 mm/s | 25 mm/s | 1500 | 1500 |
-| **Inner Walls** | 45 mm/s | 30 mm/s | 2000 | 2000 |
-| **Top/Bottom** | 40 mm/s | 28 mm/s | 2000 | 2000 |
-| **Infill** | 60 mm/s | 40 mm/s | 2500 | 2500 |
-| **Bridges** | 25 mm/s | 25 mm/s | 1500 | 1500 |
-| **Travel** | 100 mm/s | 100 mm/s | 3000 | 3000 |
-| **First Layer** | 20 mm/s | 15 mm/s | 1000 | 1000 |
-| **Support Interface** | 45 mm/s | 30 mm/s | 2000 | 2000 |
-| **Small Perimeters** | 25 mm/s | 20 mm/s | 1200 | 1200 |
+| **External Walls** | 60 mm/s | 45 mm/s | 3000 | 3000 |
+| **Inner Walls** | 80 mm/s | 55 mm/s | 4000 | 4000 |
+| **Top/Bottom** | 70 mm/s | 50 mm/s | 3500 | 3500 |
+| **Infill** | 110 mm/s | 80 mm/s | 5000 | 5000 |
+| **Bridges** | 30 mm/s | 30 mm/s | 2000 | 2000 |
+| **Travel** | 150 mm/s | 150 mm/s | 6000 | 6000 |
+| **First Layer** | 25 mm/s | 20 mm/s | 1200 | 1200 |
+| **Support Interface** | 60 mm/s | 40 mm/s | 3500 | 3500 |
+| **Small Perimeters** | 35 mm/s | 25 mm/s | 2000 | 2000 |
 
-**Square Corner Velocity:** 5–8 mm/s  
+**Square Corner Velocity:** 8–10 mm/s  
 **Max Accel to Decel:** 50% of max accel
 
 ---
@@ -43,8 +43,8 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
 
 | Nozzle | Line Width Range | Layer Height Range | Typical Use |
 |---------|------------------|--------------------|--------------|
-| 0.4 mm | 0.42–0.48 mm | 0.16–0.24 mm | Standard fine detail calibration |
-| 0.6 mm | 0.58–0.68 mm | 0.20–0.28 mm | Stable extrusion verification |
+| 0.4 mm | 0.42–0.48 mm | 0.18–0.26 mm | Standard detailed printing |
+| 0.6 mm | 0.60–0.68 mm | 0.22–0.30 mm | Higher throughput and stronger parts |
 
 ---
 
@@ -52,52 +52,43 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
 
 | Setting | Value |
 |----------|--------|
-| **Hotend Temp** | 205–215 °C |
+| **Hotend Temp** | 210–220 °C |
 | **Bed Temp** | 60 °C |
-| **Fan** | 80–100 % |
-| **Chamber** | Open air |
+| **Fan** | 90–100 % |
+| **Chamber** | Open air or lightly enclosed |
 | **Ambient Target** | 20–25 °C |
 
 ---
 
 ## Calibration Sequence
 
-1. **E-Steps and Flow Check**  
-   - Mark 100 mm filament, extrude, and measure actual length.  
-   - Adjust steps/mm if deviation >1%.
+1. **Flow Validation**  
+   - Print a 0.45 mm single-wall cube at 60–100 mm/s.  
+   - Increase speed until extrusion begins to underfill; record maximum usable speed.
 
-2. **Filament Diameter Measurement**  
-   - Average three readings at three rotations; input into slicer.
+2. **Pressure Advance Re-Check**  
+   - Print PA tower at 60–80 mm/s; fine-tune corners for slight bulge correction.
 
-3. **Single-Wall Flow Cube**  
-   - 0.45 mm target; measure wall thickness and adjust flow % to match.
+3. **Input Shaper Verification**  
+   - Reprint ringing tower or use accelerometer data to verify damping holds at higher accel.
 
-4. **First-Layer Calibration**  
-   - 75×75 mm bed patch; tune Z offset for continuous sheen.
+4. **Temperature Confirmation**  
+   - Run a shorter tower (200 °C to 225 °C) at higher speed; verify layer adhesion remains consistent.
 
-5. **Temperature Tower**  
-   - 5 °C steps (e.g., 195→220 °C); choose lowest stable fusion temperature.
-
-6. **Pressure Advance (PA)**  
-   - Print PA tower at 40 mm/s walls; select sharpest non-bulging corners.
-
-7. **Input Shaper (IS)**  
-   - Use accelerometer or ringing tower; run SHAPER_CALIBRATE or equivalent.
-
-8. **Validation Cube**  
-   - 20 mm cube; check dimensional accuracy and inspect walls for ringing.
+5. **Dimensional Stability Cube**  
+   - 40 mm cube at 100 mm/s infill; confirm wall alignment and surface uniformity.
 
 ---
 
-## Promotion Criteria to Tier 2
+## Promotion Criteria to Tier 3
 
 | Requirement | Target |
 |--------------|--------|
-| **Extrusion width tolerance** | ±0.02 mm |
-| **Visible ringing** | None at 2500 mm/s² |
-| **Flow stability** | No thinning up to 60 mm/s |
+| **Extrusion consistency** | Uniform at up to 100 mm/s |
+| **Visible ringing** | None at 4000 mm/s² |
+| **Flow stability** | No thinning up to 12 mm³/s |
 | **Layer adhesion** | Consistent across tower temps |
-| **Dimensional accuracy** | <0.1% deviation |
+| **Surface finish** | Comparable to Tier 1 at 2× speed |
 
 ---
 
@@ -105,10 +96,10 @@ It focuses on *accuracy, stability, and repeatability*, not speed.
 
 ```
 [printer]
-max_velocity: 120
-max_accel: 3000
-max_accel_to_decel: 1500
-square_corner_velocity: 6
+max_velocity: 250
+max_accel: 6000
+max_accel_to_decel: 3000
+square_corner_velocity: 9
 ```
 
 ---
@@ -117,23 +108,24 @@ square_corner_velocity: 6
 
 | Setting | Value |
 |----------|--------|
-| **Volumetric speed limit** | 6 mm³/s |
-| **Perimeter speed** | 40 mm/s |
-| **Infill speed** | 60 mm/s |
-| **Travel speed** | 100 mm/s |
-| **Acceleration control** | Enabled (1500–3000 mm/s²) |
+| **Volumetric speed limit** | 12 mm³/s |
+| **Perimeter speed** | 60 mm/s |
+| **Infill speed** | 110 mm/s |
+| **Travel speed** | 150 mm/s |
+| **Acceleration control** | Enabled (3000–6000 mm/s²) |
 | **Min layer time** | 8 s (PLA) |
 
 ---
 
 ## Tips
 
-- Perform all Tier 1 calibration on open-air PLA before advancing to PETG or ASA.  
-- Log each calibration result (temp, PA, IS) in a per-filament profile.  
-- Maintain one verified Tier 1 config as your “factory baseline.”
+- Re-tune Pressure Advance for each filament brand and color; viscosity changes at this tier.  
+- For PETG, reduce fan to 40–60 % and increase temperature by 10–15 °C.  
+- Use 0.6 mm nozzle for functional prints where time efficiency outweighs finish detail.  
+- Verify all resonance frequencies before moving to Tier 3 (HF).
 
 ---
 
 ## Author
 
-Tier 1 Framework © **wiigelec** — part of the *Tiered 3D Printer Performance Framework* project.
+Tier 2 Framework © **wiigelec** — part of the *Tiered 3D Printer Performance Framework* project.

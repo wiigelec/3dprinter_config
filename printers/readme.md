@@ -43,7 +43,7 @@ The fleet is categorized by role, from hybrid multi-material production to low-m
 | **Control Board**| Manta M8P + CM4 | Manta M4P + CB1 |
 | **Toolhead** | Custom Dual-Dock StealthChanger | **Jabberwocky Toolhead** (w/ NH36) |
 | **MMU System** | **ERCF** (External MMU) | **Box Turtle MMU** (A1 Clone) |
-| **Key Hardware**| Rapido UHF, SiC Nozzles, Active Chamber Heating. | Nitehawk 36 Toolhead MCU. |
+| **Key Hardware**| HF/UHF (Rapido/Dragon), SiC Nozzles | Nitehawk 36 Toolhead MCU. |
 | **Function** | Prints large **Nylon-CF/PC** parts on Tool 1, or complex multi-color/support jobs via **ERCF** on Tool 2. | Dedicated to high-volume, multi-color **PLA/PETG** production. Jabberwocky is engineered for high-reliability filament changes. |
 
 ### 2.2. Dedicated Workhorses & Specialties

@@ -1,6 +1,6 @@
-# 📄 Project README.md: The RepRap2025 Klipper Fleet
+# 📄 Project README.md: The Klipper Fleet
 
-## Project Title: The RepRap2025 Distributed Klipper Fleet
+## Project Title: Distributed Klipper Fleet
 
 **Overview:** This document details the hardware, specialized roles, and management stack for a high-performance, 6-machine Klipper-native 3D printer fleet. The architecture utilizes decentralized SBCs (Manta/CB1) for maximum performance, controlled by a single open-source management host. The focus is on **high-speed throughput** and **advanced material handling** (PC, Nylon-CF, MMU).
 
